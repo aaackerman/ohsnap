@@ -1,16 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>OhsnapApp</title>
+  <title>Oh SNAP</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <!-- Flash for Devise -->
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-<%= yield %>
+  <!-- bootstrap navbar -->
+  <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="container">
+      <ul class=" nav navbar-nav">
+        <% if user_signed_in? %>
+            <p class="navbar-text">Welcome back, <%= current_user.first_name %>!</p>
+            <li><%= link_to('Edit Account', edit_user_registration_path, :id => 'edit-user') %></li>
+            <li><%= link_to('Sign Out', destroy_user_session_path, method: :delete)%></li>
+        <% else %>
+            <li ><%= link_to('Sign In', new_user_session_path) %></li>
+            <li><%= link_to('Sign Up', new_user_registration_path) %></li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
 
+  <!-- content container -->
+  <div class="container">
+    <!-- Flash for Devise -->
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
+  </div>
 </body>
 </html>
