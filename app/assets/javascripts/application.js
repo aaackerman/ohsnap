@@ -23,3 +23,16 @@
 //= require_tree ./backbone/views
 //= require_tree ./templates
 //= require_tree .
+
+// on load 
+$(function(){
+  console.log('JavaScript loaded!')
+
+  $('#intro-1').click(function(){
+      console.log('clicked!')
+      $('#intro-1').fadeOut();
+      $('#intro-2').show();
+  });
+
+});
+

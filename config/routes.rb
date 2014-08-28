@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  get '/' => 'application#index', as: 'root' 
+  get '/' => 'welcome#index', as: 'root' 
 
   devise_for :users
   resources :users
