@@ -17,15 +17,18 @@ class StoriesController < ApplicationController
   end
 
   def update 
-    @story = Story.find(params[:id])
     authorize! :update, @story
-    @story.update(story_params)
+    if @story.update(story_params)  
+      render json: @story.tojson, status: 200
+    end
   end
 
   def destroy
     @story = Story.find(params[:id])
     authorize! :destroy, @story
-    @story.destroy
+    if @story.destroy
+      render json: @story.to_json, status: 200
+    end 
   end
 
   private

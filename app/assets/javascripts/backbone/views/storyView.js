@@ -4,12 +4,20 @@ App.Views.Story = Backbone.View.extend({
   initialize: function(){
     this.template = HandlebarsTemplates['stories/story'];
     this.listenTo(this.model, 'change', this.render);
-    this.listenTo(this.model, 'destory', this.remove);
+    this.listenTo(this.model, 'destroy', this.remove);
     this.render();
   },
 
   render: function(){
     this.$el.html(this.template(this.model.toJSON()));
+  },
+
+  events: {
+    'click .destroy':'destroy'
+  },
+
+  destroy: function(){
+    this.model.destroy();
   }
 
 });
