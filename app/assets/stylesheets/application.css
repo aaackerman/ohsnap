@@ -17,7 +17,7 @@
 
 .big-text {
   font-family: Garamond;
-  font-size: 75px;
+  font-size: 60px;
   padding-top: 150px;
 }
 
@@ -26,5 +26,16 @@
 }
 
 .fa-sort-desc:hover {
-  color: red;
+  color: #358BA1;
 };
+
+.animated {
+  -webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-duration:1s;-moz-animation-duration:1s;-ms-animation-duration:1s;animation-duration:1s;}.animated.hinge{-webkit-animation-duration:2s;-moz-animation-duration:2s;-ms-animation-duration:2s;animation-duration:2s;}@-webkit-keyframes fadeInUp {
+0% {
+opacity: 0;
+-webkit-transform: translateY(20px);
+} 100% {
+opacity: 1;
+-webkit-transform: translateY(0);
+}
+}
