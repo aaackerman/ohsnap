@@ -70,6 +70,8 @@ GEM
     docile (1.1.5)
     erubis (2.7.0)
     execjs (2.2.1)
+    factory_girl (4.4.0)
+      activesupport (>= 3.0.0)
     ffi (1.9.3)
     handlebars_assets (0.17.1)
       execjs (>= 1.2.9)
@@ -229,6 +231,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   database_cleaner
   devise
+  factory_girl
   jbuilder (~> 2.0)
   jquery-rails
   less-rails

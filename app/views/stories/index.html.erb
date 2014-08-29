@@ -1,0 +1,7 @@
+<div class="animated fadeIn"> 
+  <% @stories.each do |story| %>
+    <%= story.title %>
+    <%= story.user.username %>
+    <%= story.content %>
+  <% end %>
+</div>

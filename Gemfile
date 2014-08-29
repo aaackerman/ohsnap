@@ -43,6 +43,7 @@ gem 'spring',        group: :development
 
 # Testing
 group :development, :test  do
+  gem 'factory_girl'
   gem 'selenium-webdriver'
   gem 'database_cleaner'
   gem 'simplecov'
