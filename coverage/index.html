@@ -14,7 +14,11 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
+<<<<<<< HEAD
       <div class="timestamp">Generated <abbr class="timeago" title="2014-08-29T10:24:17-04:00">2014-08-29T10:24:17-04:00</abbr></div>
+=======
+      <div class="timestamp">Generated <abbr class="timeago" title="2014-08-29T10:22:01-04:00">2014-08-29T10:22:01-04:00</abbr></div>
+>>>>>>> master
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -24,16 +28,27 @@
     (<span class="covered_percent"><span class="green">100.0%</span></span>
      covered at
      <span class="covered_strength">
+<<<<<<< HEAD
        <span class="yellow">
          1.0
+=======
+       <span class="green">
+         1.11
+>>>>>>> master
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
+<<<<<<< HEAD
     <b>18</b> files in total.
     <b>66</b> relevant lines. 
     <span class="green"><b>66</b> lines covered</span> and
+=======
+    <b>20</b> files in total.
+    <b>80</b> relevant lines. 
+    <span class="green"><b>80</b> lines covered</span> and
+>>>>>>> master
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -61,6 +76,29 @@
       </tr>
       
       <tr>
+<<<<<<< HEAD
+=======
+        <td class="strong"><a href="#0d5b61356acc000ae601ead1352dcaefb1c7fccc" class="src_link" title="app/models/game.rb">app/models/game.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>7</td>
+        <td>3</td>
+        <td>3</td>
+        <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#fa0bd6a3be5352f59534fc630f870ed527cd6731" class="src_link" title="app/models/story.rb">app/models/story.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>7</td>
+        <td>2</td>
+        <td>2</td>
+        <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
+>>>>>>> master
         <td class="strong"><a href="#9c8466bbfdd38825bc925935205e62e5cbafc6f6" class="src_link" title="app/models/user.rb">app/models/user.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>15</td>
@@ -103,9 +141,15 @@
       <tr>
         <td class="strong"><a href="#df04663fdeda7a9a45f81483eb4d31ec9155b8cf" class="src_link" title="config/environments/test.rb">config/environments/test.rb</a></td>
         <td class="green strong">100.0 %</td>
+<<<<<<< HEAD
         <td>39</td>
         <td>11</td>
         <td>11</td>
+=======
+        <td>40</td>
+        <td>12</td>
+        <td>12</td>
+>>>>>>> master
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -213,11 +257,19 @@
       <tr>
         <td class="strong"><a href="#4ac50b388da7f518c21679ae5a84b5e200267e35" class="src_link" title="spec/models/user_spec.rb">spec/models/user_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
+<<<<<<< HEAD
         <td>5</td>
         <td>3</td>
         <td>3</td>
         <td>0</td>
         <td>1.0</td>
+=======
+        <td>18</td>
+        <td>11</td>
+        <td>11</td>
+        <td>0</td>
+        <td>1.8</td>
+>>>>>>> master
       </tr>
       
       <tr>
@@ -276,6 +328,129 @@
   </pre>
 </div>
       
+<<<<<<< HEAD
+=======
+        <div class="source_table" id="0d5b61356acc000ae601ead1352dcaefb1c7fccc">
+  <div class="header">
+    <h3>app/models/game.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>3</b> relevant lines. 
+      <span class="green"><b>3</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class Game &lt; ActiveRecord::Base</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
+          
+          
+          <code class="ruby">  # A game belongs to a user and has a state </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  belongs_to  :user </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  has_one     :state</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="fa0bd6a3be5352f59534fc630f870ed527cd6731">
+  <div class="header">
+    <h3>app/models/story.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>2</b> relevant lines. 
+      <span class="green"><b>2</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class Story &lt; ActiveRecord::Base</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
+          
+          
+          <code class="ruby">  #One story belongs to one user</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  belongs_to :user </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+>>>>>>> master
         <div class="source_table" id="9c8466bbfdd38825bc925935205e62e5cbafc6f6">
   <div class="header">
     <h3>app/models/user.rb</h3>
@@ -635,8 +810,13 @@
     <h3>config/environments/test.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
+<<<<<<< HEAD
       <b>11</b> relevant lines. 
       <span class="green"><b>11</b> lines covered</span> and
+=======
+      <b>12</b> relevant lines. 
+      <span class="green"><b>12</b> lines covered</span> and
+>>>>>>> master
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -836,43 +1016,77 @@
           <code class="ruby">  config.action_mailer.delivery_method = :test</code>
         </li>
       
+<<<<<<< HEAD
         <li class="never" data-hits="" data-linenumber="33">
+=======
+        <li class="covered" data-hits="1" data-linenumber="33">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  config.action_mailer.default_url_options = { host: &#39;localhost&#39;, port: 3000 }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="34">
+>>>>>>> master
           
           
           <code class="ruby"></code>
         </li>
       
+<<<<<<< HEAD
         <li class="never" data-hits="" data-linenumber="34">
+=======
+        <li class="never" data-hits="" data-linenumber="35">
+>>>>>>> master
           
           
           <code class="ruby">  # Print deprecation notices to the stderr.</code>
         </li>
       
+<<<<<<< HEAD
         <li class="covered" data-hits="1" data-linenumber="35">
+=======
+        <li class="covered" data-hits="1" data-linenumber="36">
+>>>>>>> master
           <span class="hits">1</span>
           
           <code class="ruby">  config.active_support.deprecation = :stderr</code>
         </li>
       
+<<<<<<< HEAD
         <li class="never" data-hits="" data-linenumber="36">
+=======
+        <li class="never" data-hits="" data-linenumber="37">
+>>>>>>> master
           
           
           <code class="ruby"></code>
         </li>
       
+<<<<<<< HEAD
         <li class="never" data-hits="" data-linenumber="37">
+=======
+        <li class="never" data-hits="" data-linenumber="38">
+>>>>>>> master
           
           
           <code class="ruby">  # Raises error for missing translations</code>
         </li>
       
+<<<<<<< HEAD
         <li class="never" data-hits="" data-linenumber="38">
+=======
+        <li class="never" data-hits="" data-linenumber="39">
+>>>>>>> master
           
           
           <code class="ruby">  # config.action_view.raise_on_missing_translations = true</code>
         </li>
       
+<<<<<<< HEAD
         <li class="never" data-hits="" data-linenumber="39">
+=======
+        <li class="never" data-hits="" data-linenumber="40">
+>>>>>>> master
           
           
           <code class="ruby">end</code>
@@ -3005,8 +3219,13 @@
     <h3>spec/models/user_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
+<<<<<<< HEAD
       <b>3</b> relevant lines. 
       <span class="green"><b>3</b> lines covered</span> and
+=======
+      <b>11</b> relevant lines. 
+      <span class="green"><b>11</b> lines covered</span> and
+>>>>>>> master
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -3032,6 +3251,7 @@
           <code class="ruby">RSpec.describe User, :type =&gt; :model do</code>
         </li>
       
+<<<<<<< HEAD
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
@@ -3039,6 +3259,93 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="5">
+=======
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="5">
+          <span class="hits">2</span>
+          
+          <code class="ruby"> it { is_expected.to validate_presence_of(:username) }</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="6">
+          <span class="hits">2</span>
+          
+          <code class="ruby"> it { is_expected.to validate_uniqueness_of(:username) }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="8">
+          <span class="hits">2</span>
+          
+          <code class="ruby"> it { is_expected.to validate_presence_of(:first_name) }</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="9">
+          <span class="hits">2</span>
+          
+          <code class="ruby"> it { is_expected.to validate_presence_of(:last_name) }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="11">
+          <span class="hits">2</span>
+          
+          <code class="ruby"> it { is_expected.to validate_presence_of(:email) }</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="12">
+          <span class="hits">2</span>
+          
+          <code class="ruby"> it { is_expected.to validate_uniqueness_of(:email) }</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="13">
+          <span class="hits">2</span>
+          
+          <code class="ruby"> it { is_expected.to validate_presence_of(:encrypted_password) }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="15">
+          <span class="hits">2</span>
+          
+          <code class="ruby"> it { is_expected.to have_many(:stories) }</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="16">
+          <span class="hits">2</span>
+          
+          <code class="ruby"> it { is_expected.to have_many(:games) }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+>>>>>>> master
           
           
           <code class="ruby">end</code>

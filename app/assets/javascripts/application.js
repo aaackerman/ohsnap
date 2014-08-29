@@ -28,11 +28,13 @@
 $(function(){
   console.log('JavaScript loaded!')
 
-  $('#intro-1').click(function(){
-      console.log('clicked!')
-      $('#intro-1').fadeOut();
-      $('#intro-2').show();
-  });
+  $('body').on('click', '#intro-1', slideTwo);
+
+
+  function slideTwo() {
+      console.log('clicked')
+      $('#intro-1').remove();
+      $('#intro-2').show().addClass('animated zoomIn');
+  };
 
 });
-
