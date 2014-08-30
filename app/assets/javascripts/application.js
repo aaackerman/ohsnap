@@ -34,7 +34,8 @@ $(function(){
     collection: App.Collections.stories
   });
 
-
+  App.Views.storyForm = new App.Views.StoryForm();
+  
   $('body').on('click', '#intro-1', slideTwo);
   function slideTwo() {
       console.log('clicked')

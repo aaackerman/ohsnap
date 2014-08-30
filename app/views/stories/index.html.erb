@@ -1,7 +1,7 @@
 <!-- Button to add story if signed in -->
 <% if current_user %>
   <div class="button-container">
-    <button class="btn btn-info center-block" data-toggle="modal" data-target="#myModal">
+    <button class="btn btn-info center-block" data-toggle="modal" data-target="#myModal" id="add-story">
       Add Story
     </button>
   </div>
@@ -14,7 +14,7 @@
       <div class="modal-header">
         <h4 class="modal-title" id="myModalLabel">Share a Story</h4>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" id="modal-body">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

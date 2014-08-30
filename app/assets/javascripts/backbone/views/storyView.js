@@ -13,11 +13,19 @@ App.Views.Story = Backbone.View.extend({
   },
 
   events: {
-    'click .destroy':'destroy'
+    'click .destroy':'destroy',
+    'click .edit-story': 'editStory'
   },
 
   destroy: function(){
     this.model.destroy();
+  },
+
+  editStory: function(){
+    console.log('CLICKED!')
+    $('#modal-body').empty();
+    var editTemplate = HandlebarsTemplates['stories/storyUpdateForm'];
+    $('#modal-body').html(editTemplate(this.model.toJSON()));
   }
 
 });
