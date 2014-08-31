@@ -26,6 +26,6 @@ App.Views.StoryForm = Backbone.View.extend({
       $('#content-input').val('');
       }
     });
-  } 
+  }
 
 }); 
