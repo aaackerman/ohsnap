@@ -36,11 +36,33 @@ $(function(){
 
   App.Views.storyForm = new App.Views.StoryForm();
   
+  // intro slide show javascrip 
   $('body').on('click', '#intro-1', slideTwo);
   function slideTwo() {
       console.log('clicked')
       $('#intro-1').remove();
       $('#intro-2').show().addClass('animated zoomIn');
+  };
+
+  $('body').on('click', '#intro-2', slideThree);
+  function slideThree() {
+      console.log('clicked')
+      $('#intro-2').remove();
+      $('#intro-3').show().addClass('animated zoomIn');
+  };
+
+  $('body').on('click', '#intro-3', slideFour);
+  function slideFour() {
+      console.log('clicked')
+      $('#intro-3').remove();
+      $('#intro-4').show().addClass('animated zoomIn');
+  };
+
+  $('body').on('click', '#intro-4', slideFive);
+  function slideFive() {
+      console.log('clicked')
+      $('#intro-4').remove();
+      $('#intro-5').show().addClass('animated zoomIn');
   };
 
 });

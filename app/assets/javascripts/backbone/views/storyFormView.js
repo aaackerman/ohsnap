@@ -18,7 +18,7 @@ App.Views.StoryForm = Backbone.View.extend({
   newStory: function(){
     var data = {
       title: this.$('#title-input').val(),
-      content: this.$('#title-input').val()
+      content: this.$('#content-input').val()
     };
 
     this.collection.create(data, {success: function() {

@@ -14,7 +14,7 @@ App.Views.Story = Backbone.View.extend({
 
   events: {
     'click .destroy':'destroy',
-    'click .edit-story': 'editStory',
+    'click #edit-story': 'editStory',
     'click #update-story': 'updateStory'
   },
 
@@ -23,16 +23,18 @@ App.Views.Story = Backbone.View.extend({
   },
 
   editStory: function(){
-    this.$el.replaceWith(HandlebarsTemplates['stories/storyUpdateForm'](this.model.toJSON()));
-  }, 
+    $('#modal-body2').empty();
+    var editTemplate = HandlebarsTemplates['stories/storyUpdateForm'];
+    $('#modal-body2').html(editTemplate(this.model.toJSON()));
+  },
 
   updateStory: function(){
-    console.log('clicked')
+    console.log('clicked update');
     var data = {
       title: $('#title-input').val(),
       content: $('#content-input').val()}
-    this.model.save(data);
-
+    this.model.set(data);
+    this.model.save();
   }
 
 });
