@@ -18,6 +18,7 @@ class StoriesController < ApplicationController
   end
 
   def update 
+    @story = Story.find(params[:id])
     authorize! :update, @story
     if @story.update(story_params)  
       render json: @story.to_json, status: 200

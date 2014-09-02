@@ -14,6 +14,13 @@ class GamesController < ApplicationController
     render json: @game.to_json, status: 200
     end
   end
+
+  def update
+    @game = Game.find(params[:id])
+    if @game.update(game_params)
+      render json: @game.to_json, status: 200
+    end
+  end
   
   private 
   def game_params
