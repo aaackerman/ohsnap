@@ -21,6 +21,7 @@
             <li><%= link_to('Sign Up', new_user_registration_path) %></li>
         <% end %>
           <li><%= link_to('Home', root_path)%></li>
+          <li><%= link_to('Play', play_path)%></li>
           <li><%= link_to('Stories', story_path)%></li>
       </ul>
     </div>
@@ -34,5 +35,6 @@
     <%= yield %>
   </div>
   
+  <footer><div id="current-user" style="display:none"><%=current_user.id%></div></footer>
 </body>
 </html>

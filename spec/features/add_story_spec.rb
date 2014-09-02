@@ -5,17 +5,9 @@ require 'rails_helper'
 # I can share my experience of SNAP or Oh SNAP
 
 feature 'User can add story', js: true do
-
-  scenario 'navigate to story pate' do
-    visit root_path
-    click_on 'Stories'
-    expect(page). to have_content('Add Story')
-
-  end
   
   scenario 'to story list' do
-    visit root_path
-    click_on 'Stories'
+    visit '/snapstories'
     click_on 'Add Story'
     fill_in 'Title', with: 'Test 123'
     fill_in 'Content', with: 'Content'

@@ -4,7 +4,6 @@ App.Views.Stories = Backbone.View.extend({
   el: '#stories-list',
 
   initialize: function(){
-    console.log('Stories list view created.');
     this.listenTo(this.collection, 'reset', this.renderAll);
     this.listenTo(this.collection, 'add', this.renderOne);
   },

@@ -1,7 +1,6 @@
 class StoriesController < ApplicationController
 
   def index
-
   end
   
   def list
