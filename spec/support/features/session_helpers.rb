@@ -6,6 +6,7 @@ module Features
       click_on 'Sign In'
       fill_in 'Email', with: email
       fill_in 'Password', with: password
+      sleep(5)
       click_button 'Sign In'
     end
 

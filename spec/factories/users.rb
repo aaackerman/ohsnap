@@ -8,6 +8,7 @@ FactoryGirl.define do
     email 'ohalex123@gmail.com'
     password 'password'
     password_confirmation 'password'
+  end 
 
   factory :user2 do 
     id 1
@@ -24,17 +25,14 @@ FactoryGirl.define do
       username 'nick9'
       first_name 'Nick'
       last_name 'Cook'
-      email 'nick@email.com'
+      email 'ackea040@newschool.edu'
       password 'password'
       password_confirmation 'password'
+      after(:create) { |nick| nick.confirm! }
     end
-  end
 
   factory :confirmed_user, :parent => :user do
-    after(:create) {|user| 
-      user.confirmed_at = Time.now,
-      user.save! 
-    }
+    after(:create) {|user| user.confirm! }
   end
 
   factory :confirmed_user2, :parent => :nick do

@@ -16,10 +16,11 @@ App.Views.StartForm = Backbone.View.extend({
     'click #select-state': 'stateSelect',
     'click #state-next' : 'householdSelect',
     'click #select-household' : 'getHouseholdSize',
-    'click #household-next': 'getIncome'
+    'click #household-next': 'getIncome',
+    'click #select-income': 'calcEligibility'
   },
 
-  //user selects state and game obj created
+  //User Selects State and Game Obj Created
   stateSelect: function(){
     var state = $('#state-input').val();
     stateObj = App.Collections.states.where({state: state});
@@ -31,7 +32,7 @@ App.Views.StartForm = Backbone.View.extend({
     this.stateInfo();
   },
 
-  //info on state is returned based on selection
+  //Info on State is Returned Based on Selection
   stateInfo: function(){
     this.$el.html(HandlebarsTemplates['games/stateInfo'](stateObj[0].attributes));
     var difference = (stateObj[0].attributes.benefits_2013) - (stateObj[0].attributes.benefits_2014)
@@ -41,10 +42,12 @@ App.Views.StartForm = Backbone.View.extend({
     this.$el.append('<button class="btn btn-primary btn-lg center-block" id="state-next">Next</button>');
   }, 
 
+  //Appends Household Selection Form
   householdSelect: function(){
     this.$el.html(HandlebarsTemplates['games/householdForm'])
   }, 
 
+  //Gets Household Size On User Selection
   getHouseholdSize: function(){
     var size = $('#household-input').val();
     thisGame.set({household_size: parseInt(size)});
@@ -52,6 +55,7 @@ App.Views.StartForm = Backbone.View.extend({
     this.showMaxAllotment();
   },
 
+  //Shows Max Allotment Based on User Household Size
   showMaxAllotment: function(){
     var size = thisGame.attributes.household_size
     var maxAllotment = 0;
@@ -85,7 +89,7 @@ App.Views.StartForm = Backbone.View.extend({
 
   var difference = prevAllotment - maxAllotment;
   
-  // show data on page
+  //Show Data on Allotments 
   this.$el.empty();
   var element = $('<h1>').addClass('text-center big-text animated fadeIn');
   element.text("The max allotment for your household size is $" + maxAllotment + " per month. In 2013, the maximum was $" + prevAllotment + ". That's a differnce of $" + difference + ". But let's get a little more specific...")
@@ -93,8 +97,49 @@ App.Views.StartForm = Backbone.View.extend({
   this.$el.append('<button class="btn btn-primary btn-lg center-block" id="household-next">Next</button>');
   },
 
+  //Shows Form Template for Income Range
   getIncome: function(){
     this.$el.html(HandlebarsTemplates['games/incomeForm']);
+  }, 
+
+  //Calcs if User is Eligable Based on Income Selection
+  calcEligibility: function(){
+    var income = $('#rangevalue').val();
+    var isBelow = false;
+    var size = thisGame.attributes.household_size;
+    if (size === 1 && income <= 1245){
+      isBelow = true
+    } else if (size === 2 && income <= 1681) {
+      isBelow = true
+    } else if (size === 3 && income <= 2111) {
+      isBelow = true
+    } else if (size === 4 && income <= 2552) {
+      isBelow = true 
+    } else if (size === 5 && income <= 2987) {
+      isBelow = true
+    } else if (size === 6 && income <= 3423) {
+      isBelow = true
+    } else if (size === 7 && income <= 3858) {
+      isBelow = true
+    } else if (size === 8 && income <= 4294) {
+      isBelow = true
+    } else {
+      isBelow = false 
+    }
+
+    if (isBelow === true ){
+      thisGame.set({income: income});
+      thisGame.save();
+      this.calcAllotment();
+    } else {
+      this.$el.append('<br><div class="alert alert-danger" role="alert" class="text-center">You do not recieve SNAP benefits if you make above 130 percent of the poverty line. Please select another income amount.</div>');
+    }
+  },
+
+  calcAllotment: function(){
+    this.$el.empty();
+    
   }
+
 
 });
