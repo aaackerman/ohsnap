@@ -45,6 +45,7 @@ $(function(){
   App.Collections.games = new App.Collections.Games();
   App.Collections.games.fetch();
   App.Routers.game = new App.Routers.Game();
+  App.Views.startForm = new App.Views.StartForm();
 
   // Intro Slides JS
   $('body').on('click', '#intro-1', slideTwo);

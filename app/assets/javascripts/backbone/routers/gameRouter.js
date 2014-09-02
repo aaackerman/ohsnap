@@ -1,12 +1,11 @@
 App.Routers.Game = Backbone.Router.extend({
+
   routes: {
-    'start': 'startGame'
+    'stateinfo': 'stateInfo'
   },
 
-  startGame: function(){
-    console.log('Game begin!')
-    var id = $('#current-user').html();
-    console.log(id);
+  stateInfo: function(){
+    console.log('navigated!')
   }
 
 });

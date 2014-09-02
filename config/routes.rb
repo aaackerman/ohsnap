@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   get '/states'         =>  'states#index'
 
   devise_for :users
-  resources :users, :stories 
+  resources :users, :stories, :games
 
 end
