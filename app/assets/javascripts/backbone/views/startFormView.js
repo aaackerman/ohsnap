@@ -92,7 +92,7 @@ App.Views.StartForm = Backbone.View.extend({
   //Show Data on Allotments 
   this.$el.empty();
   var element = $('<h1>').addClass('text-center big-text animated fadeIn');
-  element.text("The max allotment for your household size is $" + maxAllotment + " per month. In 2013, the maximum was $" + prevAllotment + ". That's a differnce of $" + difference + ". But let's get a little more specific...")
+  element.text("The max allotment for your household size is $" + maxAllotment + " per month. In 2013, the maximum was $" + prevAllotment + ". That's a differnce of $" + difference + ". Let's get a little more specific...")
   this.$el.append(element);
   this.$el.append('<button class="btn btn-primary btn-lg center-block" id="household-next">Next</button>');
   },
@@ -169,8 +169,10 @@ App.Views.StartForm = Backbone.View.extend({
       allotmentBefore = (200 - athird);
     }
 
+    //If allotments are positive numbers continue game, else error
     if (allotmentNow && allotmentBefore > 0) {
-      thisGame.set({allotment: allotmentNow, allotment_before: allotmentBefore});
+      var weekly = (allotmentNow / 4)
+      thisGame.set({allotment: allotmentNow, allotment_before: allotmentBefore, weekly_allotment: weekly});
       thisGame.save();
       this.showAllotment();
     } else {
