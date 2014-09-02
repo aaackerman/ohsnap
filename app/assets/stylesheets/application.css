@@ -15,6 +15,9 @@
  *= require animate
  */
 
+h1, h2, h3 {
+  font-family: Garamond;
+}
 .big-text {
   font-family: Garamond;
   font-size: 45px;
@@ -47,4 +50,12 @@
 
 .button-container {
   padding-bottom: 20px;
+}
+
+.btn-primary{
+  background-color: #358BA1;
+}
+
+.btn-primary:hover{
+  background-color: #2E6F80;
 }

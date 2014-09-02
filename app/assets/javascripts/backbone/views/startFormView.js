@@ -13,9 +13,11 @@ App.Views.StartForm = Backbone.View.extend({
   },
 
   events: {
-    'click #select-state': 'stateSelect'
+    'click #select-state': 'stateSelect',
+    'click #state-next' : 'householdSelect'
   },
 
+  //user selects state and game obj created
   stateSelect: function(){
     var state = $('#state-input').val();
     stateObj = App.Collections.states.where({state: state});
@@ -27,12 +29,18 @@ App.Views.StartForm = Backbone.View.extend({
     this.stateInfo();
   },
 
+  //info on state is returned based on selection
   stateInfo: function(){
     this.$el.html(HandlebarsTemplates['games/stateInfo'](stateObj[0].attributes));
     var difference = (stateObj[0].attributes.benefits_2013) - (stateObj[0].attributes.benefits_2014)
     var differenceEl = $('<h1>')
-    this.$el.append(differenceEl.html("That's a difference of $" + difference))
-  }
+    differenceEl.addClass('text-center')
+    this.$el.append(differenceEl.html("Between 2013 and 2014, the benefits for this state decreased by $" + difference))
+    this.$el.append('<button class="btn btn-primary btn-lg center-block" id="state-next">Next</button>');
+  }, 
 
+  householdSelect: function(){
+    console.log('next!')
+  }
 
 });
