@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140828161759) do
+ActiveRecord::Schema.define(version: 20140902204452) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20140828161759) do
     t.integer "allotment"
     t.integer "state_id"
     t.integer "user_id"
+    t.integer "allotment_before"
   end
 
   create_table "states", force: true do |t|

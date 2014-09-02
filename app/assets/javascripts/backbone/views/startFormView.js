@@ -132,13 +132,56 @@ App.Views.StartForm = Backbone.View.extend({
       thisGame.save();
       this.calcAllotment();
     } else {
-      this.$el.append('<br><div class="alert alert-danger" role="alert" class="text-center">You do not recieve SNAP benefits if you make above 130 percent of the poverty line. Please select another income amount.</div>');
+      $('.error').remove();
+      this.$el.append('<br><div class="alert alert-danger error" role="alert" class="text-center">You do not recieve SNAP benefits if you make above 130 percent of the poverty line. Please select another income amount.</div>');
     }
   },
 
   calcAllotment: function(){
+    var income = thisGame.attributes.income
+    var athird = (income * 0.3)
+    var size = thisGame.attributes.household_size
+    var allotmentNow = 0;
+    var allotmentBefore = 0;
+    if (size === 8) {
+      allotmentNow = (1137 - athird);
+      allotmentBefore = (1202 - athird);
+    } else if (size === 7) {
+      allotmentNow = (995 - athird);
+      allotmentBefore = (1052 - athird);
+    } else if (size === 6) {
+      allotmentNow = (900 - athird);
+      allotmentBefore = (952 - athird);
+    } else if (size === 5) {
+      allotmentNow = (750 - athird);
+      allotmentBefore = (794 - athird);
+    } else if (size === 4) {
+      allotmentNow = (632 - athird);
+      allotmentBefore = (668 - athird);
+    } else if (size === 3) {
+      allotmentNow = (497 - athird);
+      allotmentBefore = (526 - athird);
+    } else if (size === 2) {
+      allotmentNow = (347 - athird);
+      allotmentBefore = (367 - athird);
+    } else if (size === 1) {
+      allotmentNow = (189 - athird);
+      allotmentBefore = (200 - athird);
+    }
+
+    if (allotmentNow && allotmentBefore > 0) {
+      thisGame.set({allotment: allotmentNow, allotment_before: allotmentBefore});
+      thisGame.save();
+      this.showAllotment();
+    } else {
+      $('.error').remove();
+      this.$el.append('<br><div class="alert alert-danger error" role="alert" class="text-center">With this calculation, you would not recieve benefits. Please select a lower income amount to continue.</div>');
+    }
+  },
+
+  showAllotment: function(){
     this.$el.empty();
-    
+    this.$el.html(HandlebarsTemplates['games/showAllotment'](thisGame.attributes))
   }
 
 
