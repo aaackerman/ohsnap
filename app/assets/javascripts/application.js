@@ -45,6 +45,10 @@ $(function(){
   App.Collections.games.fetch();
   App.Views.startForm = new App.Views.StartForm();
 
+  //FOODS BACKBONE
+  App.Collections.foods = new App.Collections.Foods();
+  App.Collections.foods.fetch();
+
   //INTRO SLIDES
   $('body').on('click', '#intro-1', slideTwo);
   function slideTwo() {

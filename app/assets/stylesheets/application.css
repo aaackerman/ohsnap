@@ -18,6 +18,12 @@
 h1, h2, h3 {
   font-family: Garamond;
 }
+
+.reg-text {
+  font-family: Garamond;
+  font-size: 22px;
+}
+
 .big-text {
   font-family: Garamond;
   font-size: 45px;

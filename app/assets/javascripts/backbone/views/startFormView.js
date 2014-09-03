@@ -16,7 +16,10 @@ App.Views.StartForm = Backbone.View.extend({
     'click #state-next' : 'householdSelect',
     'click #select-household' : 'getHouseholdSize',
     'click #household-next': 'getIncome',
-    'click #select-income': 'calcEligibility'
+    'click #select-income': 'calcEligibility',
+    'click #allotment-next': 'startShopping',
+    'click #add-item': 'addItem',
+    'click #checkout': 'checkout'
   },
 
   //User Selects State and Game Obj Created
@@ -183,6 +186,62 @@ App.Views.StartForm = Backbone.View.extend({
   showAllotment: function(){
     this.$el.empty();
     this.$el.html(HandlebarsTemplates['games/showAllotment'](thisGame.attributes))
+  },
+
+  startShopping: function(){
+    var data = App.Collections.foods.models;
+    this.$el.empty();
+    this.$el.html(HandlebarsTemplates['games/foodsForm'](data))
+    $('#allotment').text("Allotment $" + thisGame.attributes.weekly_allotment)
+  },
+
+  addItem: function(){
+    //Gets input food val and takes out price (rounded)
+    var foodSelection = $('#foods-input').val();
+    var getPrice = function(item){
+      var string = (''+ item +'')
+      var price = string.substring(1,6);
+      return price;
+    };
+
+    var preciseRound = function(num, decimals) {
+      return Math.round(num * Math.pow(10, decimals)) / Math.pow(10, decimals);
+    };
+
+    //Updates cart/allotment with food price and selection
+    var priceVal = getPrice(foodSelection);
+    var priceInt = parseFloat(priceVal);
+    var roundedPrice = preciseRound(priceInt, 2);
+
+    console.log(roundedPrice);
+
+    var item = $('<li>').text(foodSelection).appendTo('#items-list');
+    var allotmentString = $('#allotment').text();
+    var initialAllotment = allotmentString.substring(11, 15);
+    var newAllotment = initialAllotment - roundedPrice;
+    var roundedAllotment = preciseRound(newAllotment, 2);
+    $('#allotment').text("Allotment $" + roundedAllotment);
+    
+    var oldTotal = $('#cart-total').text()
+    var newTotal = parseFloat(oldTotal) + roundedPrice;
+    $('#cart-total').text(preciseRound(newTotal, 2));
+    this.checkAllotment(roundedAllotment);
+  },
+
+  checkAllotment: function(allotment){
+    if (allotment > 0 ) {
+      console.log('Keep shopping!')
+    } else {
+      $('#add-item').remove();
+      $('#allotment').replaceWith('<div class="alert alert-danger error" role="alert" class="text-center">Please checkout, you have reached your weekly budget!</div>');
+    }
+  },
+
+  checkout: function(){
+    playercart = $('#items-list').html();
+    this.$el.empty();
+    this.$el.html(HandlebarsTemplates['games/gameStats'](thisGame.attributes))
+    $('#cart-list').append(playercart);
   }
 
 
