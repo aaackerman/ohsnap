@@ -9,6 +9,8 @@ which went into effect in 2014, and what the process of shopping for food is lik
 
 * Trello Board with User Stories: http://bit.ly/1nV0z7G
 
+* Link to Heroku Deployment: http://www.ohsnaptheapp.herokuapp.com
+
 * Technologies Used
   - Ruby | Rails
   - PostgreSQL
@@ -21,5 +23,3 @@ which went into effect in 2014, and what the process of shopping for food is lik
   - CanCanCan
   - Bootstrap
   - Animate.css
-
-* Link to Heroku Deployment: http://www.ohsnaptheapp.herokuapp.com
