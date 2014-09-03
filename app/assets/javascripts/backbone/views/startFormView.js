@@ -38,9 +38,15 @@ App.Views.StartForm = Backbone.View.extend({
   stateInfo: function(){
     this.$el.html(HandlebarsTemplates['games/stateInfo'](stateObj[0].attributes));
     var difference = (stateObj[0].attributes.benefits_2013) - (stateObj[0].attributes.benefits_2014)
-    var differenceEl = $('<h1>')
-    differenceEl.addClass('text-center animated fadeIn')
-    this.$el.append(differenceEl.html("Between 2013 and 2014, the benefits for this state decreased by $" + difference))
+    
+    //Function to Convert Big Nums to Have Commas
+    var numberWithCommas = function(x) {
+      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    var differenceWithCommas = numberWithCommas(difference);
+    var differenceEl = $('<h1>').addClass('text-center animated fadeIn')
+    this.$el.append(differenceEl.html("Between 2013 and 2014, the benefits for this state decreased by $" + differenceWithCommas))
     this.$el.append('<button class="btn btn-primary btn-lg center-block" id="state-next">Next</button>');
   }, 
 
@@ -99,7 +105,7 @@ App.Views.StartForm = Backbone.View.extend({
   this.$el.append('<button class="btn btn-primary btn-lg center-block" id="household-next">Next</button>');
   },
 
-  //Shows Form Template for Income Range
+  //Shows Form for Income Range
   getIncome: function(){
     this.$el.html(HandlebarsTemplates['games/incomeForm']);
   }, 
@@ -188,6 +194,7 @@ App.Views.StartForm = Backbone.View.extend({
     this.$el.html(HandlebarsTemplates['games/showAllotment'](thisGame.attributes))
   },
 
+  //Adds Shopping Form
   startShopping: function(){
     var data = App.Collections.foods.models;
     this.$el.empty();
@@ -195,6 +202,7 @@ App.Views.StartForm = Backbone.View.extend({
     $('#allotment').text("Allotment $" + thisGame.attributes.weekly_allotment)
   },
 
+  // Runs Dynamic Calculations when Adding Items
   addItem: function(){
     //Gets input food val and takes out price (rounded)
     var foodSelection = $('#foods-input').val();
@@ -204,17 +212,17 @@ App.Views.StartForm = Backbone.View.extend({
       return price;
     };
 
+    //Rounds price for calculations
     var preciseRound = function(num, decimals) {
       return Math.round(num * Math.pow(10, decimals)) / Math.pow(10, decimals);
     };
 
-    //Updates cart/allotment with food price and selection
+    //Updates cart and allotment with food price/selection
     var priceVal = getPrice(foodSelection);
     var priceInt = parseFloat(priceVal);
     var roundedPrice = preciseRound(priceInt, 2);
 
-    console.log(roundedPrice);
-
+    //Calcs for Allotment Updates
     var item = $('<li>').text(foodSelection).appendTo('#items-list');
     var allotmentString = $('#allotment').text();
     var initialAllotment = allotmentString.substring(11, 15);
@@ -222,12 +230,14 @@ App.Views.StartForm = Backbone.View.extend({
     var roundedAllotment = preciseRound(newAllotment, 2);
     $('#allotment').text("Allotment $" + roundedAllotment);
     
+    // Calcs for Cart Total Updates
     var oldTotal = $('#cart-total').text()
     var newTotal = parseFloat(oldTotal) + roundedPrice;
     $('#cart-total').text(preciseRound(newTotal, 2));
     this.checkAllotment(roundedAllotment);
   },
 
+  //Checks if Budget Reached
   checkAllotment: function(allotment){
     if (allotment > 0 ) {
       console.log('Keep shopping!')
@@ -246,6 +256,5 @@ App.Views.StartForm = Backbone.View.extend({
     thisGame.save();
     console.log(thisGame.attributes)
   }
-
 
 });

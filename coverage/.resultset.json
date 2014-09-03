@@ -566,6 +566,8 @@
         1,
         1,
         1,
+        1,
+        1,
         null,
         1,
         1,
@@ -600,7 +602,7 @@
         null,
         null,
         1,
-        22,
+        39,
         null,
         null,
         1,
@@ -608,11 +610,11 @@
         null,
         null,
         1,
-        22,
+        39,
         null,
         null,
         1,
-        22,
+        39,
         null,
         null,
         null
@@ -747,6 +749,84 @@
         null,
         null
       ],
+      "/Users/AAAckerman/Code/Personal/ohsnap_app/spec/models/food_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        2,
+        2,
+        null,
+        null
+      ],
+      "/Users/AAAckerman/Code/Personal/ohsnap_app/app/models/food.rb": [
+        1,
+        null
+      ],
+      "/Users/AAAckerman/Code/Personal/ohsnap_app/spec/models/game_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        2,
+        2,
+        null,
+        null
+      ],
+      "/Users/AAAckerman/Code/Personal/ohsnap_app/app/models/game.rb": [
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/AAAckerman/Code/Personal/ohsnap_app/spec/models/state_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        null,
+        null
+      ],
+      "/Users/AAAckerman/Code/Personal/ohsnap_app/app/models/state.rb": [
+        1,
+        null
+      ],
+      "/Users/AAAckerman/Code/Personal/ohsnap_app/spec/models/story_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        2,
+        2,
+        2,
+        null,
+        2,
+        null,
+        2,
+        2,
+        null,
+        null
+      ],
+      "/Users/AAAckerman/Code/Personal/ohsnap_app/app/models/story.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
       "/Users/AAAckerman/Code/Personal/ohsnap_app/spec/models/user_spec.rb": [
         1,
         null,
@@ -769,6 +849,9 @@
       ],
       "/Users/AAAckerman/Code/Personal/ohsnap_app/app/controllers/welcome_controller.rb": [
         1,
+        null,
+        1,
+        null,
         null,
         1,
         null,
@@ -837,16 +920,6 @@
         null,
         null
       ],
-      "/Users/AAAckerman/Code/Personal/ohsnap_app/app/models/story.rb": [
-        1,
-        null,
-        null,
-        1,
-        null,
-        1,
-        null,
-        null
-      ],
       "/Users/AAAckerman/Code/Personal/ohsnap_app/app/controllers/states_controller.rb": [
         1,
         null,
@@ -854,14 +927,6 @@
         40,
         40,
         null,
-        null,
-        null
-      ],
-      "/Users/AAAckerman/Code/Personal/ohsnap_app/app/models/state.rb": [
-        1,
-        null,
-        null,
-        1,
         null,
         null
       ],
@@ -880,6 +945,7 @@
         0,
         0,
         0,
+        0,
         null,
         null,
         null,
@@ -896,12 +962,13 @@
         null,
         null
       ],
-      "/Users/AAAckerman/Code/Personal/ohsnap_app/app/models/game.rb": [
+      "/Users/AAAckerman/Code/Personal/ohsnap_app/app/controllers/foods_controller.rb": [
         1,
         null,
+        1,
+        40,
+        40,
         null,
-        1,
-        1,
         null,
         null
       ],
@@ -924,6 +991,6 @@
         null
       ]
     },
-    "timestamp": 1409713060
+    "timestamp": 1409770691
   }
 }

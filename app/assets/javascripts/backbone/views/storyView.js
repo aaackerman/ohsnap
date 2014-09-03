@@ -25,5 +25,4 @@ App.Views.Story = Backbone.View.extend({
     this.$el.replaceWith(HandlebarsTemplates['stories/storyUpdateForm'](this.model.toJSON()));
     $('body').on('click', '#update-story', this.updateStory);
   }
-
 });

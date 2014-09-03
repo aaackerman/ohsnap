@@ -6,7 +6,7 @@ feature 'Users ', js: true do
     visit('')
     expect(page).to have_content('Over 45 million Americans')
     find('#intro-1').click
-    expect(page).to have_content('Benefits, or Food Stamps')
+    expect(page).to have_content('The benefits, or Food Stamps')
     find('#intro-2').click
     expect(page).to have_content('In November 2013')
     find('#intro-3').click

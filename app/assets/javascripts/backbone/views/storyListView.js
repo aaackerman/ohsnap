@@ -1,5 +1,4 @@
 App.Views.Stories = Backbone.View.extend({
-  
   el: '#stories-list',
 
   initialize: function(){
