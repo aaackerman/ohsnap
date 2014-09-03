@@ -15,8 +15,9 @@
   </tr>
 </thead>
 <tbody>
-  <% if @user.games.length > 0 %>
+  <% if @user.games.length > 0 &&%>
     <% @user.games.each do |game| %>
+      <% if game.completed === true %>
       <tr>
        <td>$<%= game.weekly_allotment %></td>
        <td><%= game.household_size %></td>
@@ -26,6 +27,7 @@
        <td><%= game.allotment_before %></td>
        <td><%= game.allotment %></td>
       </tr>
+      <% end %>
     <% end %>
   <% end %>
   </tbody>

@@ -242,6 +242,9 @@ App.Views.StartForm = Backbone.View.extend({
     this.$el.empty();
     this.$el.html(HandlebarsTemplates['games/gameStats'](thisGame.attributes))
     $('#cart-list').append(playercart);
+    thisGame.attributes.completed = true;
+    thisGame.save();
+    console.log(thisGame.attributes)
   }
 
 
