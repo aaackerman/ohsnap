@@ -2,7 +2,6 @@ App.Views.StartForm = Backbone.View.extend({
   el: '#game-div',
 
   initialize: function(){
-    console.log('new start form created!');
     this.template = HandlebarsTemplates['games/startForm'];
     this.collection = App.Collections.games;
     this.render();

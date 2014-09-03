@@ -28,7 +28,6 @@ FactoryGirl.define do
       email 'ackea040@newschool.edu'
       password 'password'
       password_confirmation 'password'
-      after(:create) { |nick| nick.confirm! }
     end
 
   factory :confirmed_user, :parent => :user do

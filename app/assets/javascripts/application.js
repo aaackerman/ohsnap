@@ -12,7 +12,6 @@
 //= require_tree ./templates
 //= require_tree .
 
-
 //Global App Obj for Backbone
 App = {
   Models: {},
@@ -44,10 +43,9 @@ $(function(){
   //GAMES BACKBONE
   App.Collections.games = new App.Collections.Games();
   App.Collections.games.fetch();
-  App.Routers.game = new App.Routers.Game();
   App.Views.startForm = new App.Views.StartForm();
 
-  // Intro Slides JS
+  //INTRO SLIDES
   $('body').on('click', '#intro-1', slideTwo);
   function slideTwo() {
       $('#intro-1').remove();
@@ -79,5 +77,4 @@ $(function(){
       $('#intro-5').show().addClass('animated zoomIn');
       $('#play-button').css({'display' :'inline'});
   };
-  
 });

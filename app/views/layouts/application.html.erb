@@ -35,6 +35,7 @@
     <%= yield %>
   </div>
 
+  <!-- hidden div for accessing user id in game -->
   <% if user_signed_in? %>
   <footer><div id="current-user" style="display:none"><%=current_user.id%></div></footer>
   <% end %> 

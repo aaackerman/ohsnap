@@ -12,4 +12,15 @@ feature 'User can log in', js: true do
     expect(page).to have_content('Welcome back')
   end
 
+  scenario 'not with invalid password' do
+    user = FactoryGirl.create(:confirmed_user)
+    log_in_with(user.email, 'wrongpassword')
+    expect(page).to have_content('Invalid email or password.')
+  end
+
+  scenario 'not with invalid email' do
+    user = FactoryGirl.create(:confirmed_user)
+    log_in_with('wrongemail@email.com' , user.password)
+    expect(page).to have_content('Invalid email or password.')
+  end
 end
