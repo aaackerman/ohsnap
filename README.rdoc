@@ -1,28 +1,25 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Oh SNAP is a “simulator data toy” to see how Food Stamps affect families and children in America. 
+It will allow users to see the amount of SNAP benefits they would have had before the cut and after, 
+which went into effect in 2014, and what the process of shopping for food is like .
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* ERD: http://bit.ly/W8OJ2c 
+
+* Trello Board with User Stories: http://bit.ly/1nV0z7G
+
+* Technologies Used
+  - Ruby | Rails
+  - PostgreSQL
+  - Handlebars
+  - Backbone.js
+  - FactoryGirl
+  - RSpec | Capybara
+  - Simplecov
+  - Devise
+  - CanCanCan
+  - Bootstrap
+  - Animate.css
+
+* Link to Heroku Deployment: http://www.ohsnaptheapp.herokuapp.com
