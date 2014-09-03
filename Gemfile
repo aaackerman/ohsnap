@@ -18,12 +18,14 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'cancancan', '~> 1.9'
 gem 'devise'
 
-# Bootsrap
+# Bootsrap and CSS
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
 gem "animate-rails"
+gem "social-buttons", '~> 0.3'
 
+# Backbone and Handlebars
 gem 'backbars'
 
 # Use jquery as the JavaScript library

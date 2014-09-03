@@ -223,7 +223,8 @@ App.Views.StartForm = Backbone.View.extend({
     var roundedPrice = preciseRound(priceInt, 2);
 
     //Calcs for Allotment Updates
-    var item = $('<li>').text(foodSelection).appendTo('#items-list');
+    var item = $('<li>').text(foodSelection)
+    item.appendTo('#items-list');
     var allotmentString = $('#allotment').text();
     var initialAllotment = allotmentString.substring(11, 15);
     var newAllotment = initialAllotment - roundedPrice;

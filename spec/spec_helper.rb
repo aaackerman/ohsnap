@@ -1,6 +1,7 @@
 require 'rspec/collection_matchers'
 require 'simplecov'
 require 'factory_girl_rails'
+require 'devise'
 
 SimpleCov.start
 

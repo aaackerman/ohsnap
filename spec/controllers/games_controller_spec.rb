@@ -10,4 +10,7 @@ describe GamesController do
     end
   end
 
+  describe 'should permit' do
+    it { should permit(:income, :household_size, :allotment, :allotment_before, :weekly_allotment, :state_id, :user_id, :completed). for(:create) }
+  end
 end
