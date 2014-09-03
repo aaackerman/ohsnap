@@ -4,7 +4,7 @@ require 'rails_helper'
 # Story: As a user, I want to be able to add a story so that 
 # I can share my experience of SNAP or Oh SNAP
 
-feature 'User navigate to stories page and', js: true do
+feature 'Users ', js: true do
   
   scenario 'can add story if signed in' do
     user = FactoryGirl.create(:confirmed_user)
@@ -22,7 +22,7 @@ feature 'User navigate to stories page and', js: true do
     expect(page).to have_no_content('Add Story')
   end
 
-  scenario 'can add story if signed in and delete' do
+  scenario 'can add story if signed in and delete it' do
     user = FactoryGirl.create(:confirmed_user)
     log_in_with(user.email, user.password)
     click_on 'Stories'
