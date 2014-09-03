@@ -1,6 +1,6 @@
 FactoryGirl.define do
   
-  factory :user do
+  factory :user, :class => User do
     id 3
     username 'aaackerman'
     first_name 'Alex'
@@ -10,7 +10,7 @@ FactoryGirl.define do
     password_confirmation 'password'
   end 
 
-  factory :user2 do 
+  factory :user2,:class => User do 
     id 1
     username 'johnnyd'
     first_name 'John'
@@ -20,7 +20,7 @@ FactoryGirl.define do
     password_confirmation 'password'
   end 
 
-    factory :nick do
+    factory :nick, :class => User do
       id 2
       username 'nick9'
       first_name 'Nick'

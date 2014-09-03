@@ -1,7 +1,16 @@
-FactoryGirl.factories.map(&:name).each do |factory_name|
- describe "The #{factory_name} factory" do
-   it 'is valid' do
-     FactoryGirl.build(factory_name).should be_valid
-   end
- end
-end
+require 'rails_helper' 
+
+RSpec.describe "Factory Girl" do
+  FactoryGirl.factories.map(&:name).each do |factory_name|
+    describe "#{factory_name} factory" do
+
+      # Test each factory
+      it "is valid" do
+        factory = FactoryGirl.build(factory_name)
+        if factory.respond_to?(:valid?)
+          expect(factory).to be_valid
+        end
+      end
+     end
+    end
+  end
