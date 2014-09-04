@@ -16,7 +16,12 @@
  */
 
 h1, h2, h3 {
-  font-family: Garamond;
+  font-family: Garamond, serif;
+}
+
+.brand {
+  font-family: arial, sans-serif;
+  color: white;
 }
 
 .reg-text {
