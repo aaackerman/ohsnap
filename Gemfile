@@ -41,7 +41,6 @@ gem 'rails_12factor', group: :production
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
-
 # Testing
 group :development, :test  do
   gem 'factory_girl'
@@ -56,6 +55,7 @@ group :development, :test  do
   gem 'shoulda-matchers', require: false
   gem 'rspec-collection_matchers'
   gem 'capybara'
+  gem 'jasmine'
 end
 
 

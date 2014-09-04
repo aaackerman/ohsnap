@@ -1034,7 +1034,7 @@
         null,
         null
       ],
-      "/Users/AAAckerman/Code/Personal/ohsnap_app/app/controllers/states_controller.rb": [
+      "/Users/AAAckerman/Code/Personal/ohsnap_app/app/controllers/foods_controller.rb": [
         1,
         null,
         1,
@@ -1044,7 +1044,7 @@
         null,
         null
       ],
-      "/Users/AAAckerman/Code/Personal/ohsnap_app/app/controllers/foods_controller.rb": [
+      "/Users/AAAckerman/Code/Personal/ohsnap_app/app/controllers/states_controller.rb": [
         1,
         null,
         1,
@@ -1055,6 +1055,6 @@
         null
       ]
     },
-    "timestamp": 1409779884
+    "timestamp": 1409792852
   }
 }
