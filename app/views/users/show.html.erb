@@ -22,8 +22,8 @@
        <td>$<%= game.weekly_allotment %></td>
        <td><%= game.household_size %></td>
        <td>$<%= game.income %></td>
-       <% state =  State.find_by(id: game.state_id) %>
-       <td><%= state.state %></td>
+       <% state_obj = State.find_by(id: game.state_id) %>
+       <td><%= state_obj.state %></td>
        <td><%= game.allotment_before %></td>
        <td><%= game.allotment %></td>
       </tr>

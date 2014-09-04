@@ -1,5 +1,6 @@
 require 'csv'
 
+User.destroy_all
 State.destroy_all
 Story.destroy_all
 Food.destroy_all 
