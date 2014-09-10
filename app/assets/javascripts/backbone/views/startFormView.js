@@ -151,28 +151,28 @@ App.Views.StartForm = Backbone.View.extend({
     var size = thisGame.attributes.household_size
     var allotmentNow = 0;
     var allotmentBefore = 0;
-    if (size === 8) {
+    if (size == 8) {
       allotmentNow = (1137 - athird);
       allotmentBefore = (1202 - athird);
-    } else if (size === 7) {
+    } else if (size == 7) {
       allotmentNow = (995 - athird);
       allotmentBefore = (1052 - athird);
-    } else if (size === 6) {
+    } else if (size == 6) {
       allotmentNow = (900 - athird);
       allotmentBefore = (952 - athird);
-    } else if (size === 5) {
+    } else if (size == 5) {
       allotmentNow = (750 - athird);
       allotmentBefore = (794 - athird);
-    } else if (size === 4) {
+    } else if (size == 4) {
       allotmentNow = (632 - athird);
       allotmentBefore = (668 - athird);
-    } else if (size === 3) {
+    } else if (size == 3) {
       allotmentNow = (497 - athird);
       allotmentBefore = (526 - athird);
-    } else if (size === 2) {
+    } else if (size == 2) {
       allotmentNow = (347 - athird);
       allotmentBefore = (367 - athird);
-    } else if (size === 1) {
+    } else if (size == 1) {
       allotmentNow = (189 - athird);
       allotmentBefore = (200 - athird);
     }
@@ -192,6 +192,7 @@ App.Views.StartForm = Backbone.View.extend({
   showAllotment: function(){
     this.$el.empty();
     this.$el.html(HandlebarsTemplates['games/showAllotment'](thisGame.attributes))
+    console.log(thisGame)
   },
 
   //Adds Shopping Form
@@ -255,7 +256,6 @@ App.Views.StartForm = Backbone.View.extend({
     $('#cart-list').append(playercart);
     thisGame.attributes.completed = true;
     thisGame.save();
-    console.log(thisGame.attributes)
   }
 
 });
