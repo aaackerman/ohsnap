@@ -149,8 +149,8 @@ App.Views.StartForm = Backbone.View.extend({
     var income = thisGame.attributes.income
     var athird = (income * 0.3)
     var size = thisGame.attributes.household_size
-    var allotmentNow = 0;
-    var allotmentBefore = 0;
+    allotmentNow = 0;
+    allotmentBefore = 0;
     if (size == 8) {
       allotmentNow = (1137 - athird);
       allotmentBefore = (1202 - athird);
@@ -179,7 +179,7 @@ App.Views.StartForm = Backbone.View.extend({
 
     //If allotments are positive numbers continue game, else error
     if (allotmentNow && allotmentBefore > 0) {
-      var weekly = (allotmentNow / 4)
+      weekly = (allotmentNow / 4)
       thisGame.save({allotment: allotmentNow, allotment_before: allotmentBefore, weekly_allotment: weekly});
       this.showAllotment();
     } else {
@@ -189,6 +189,7 @@ App.Views.StartForm = Backbone.View.extend({
   },
 
   showAllotment: function(){
+          thisGame.save({allotment: allotmentNow, allotment_before: allotmentBefore, weekly_allotment: weekly});
     this.$el.empty();
     this.$el.html(HandlebarsTemplates['games/showAllotment'](thisGame.attributes))
   },
