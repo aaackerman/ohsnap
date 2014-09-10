@@ -189,7 +189,7 @@ App.Views.StartForm = Backbone.View.extend({
   },
 
   showAllotment: function(){
-          thisGame.save({allotment: allotmentNow, allotment_before: allotmentBefore, weekly_allotment: weekly});
+    thisGame.save({allotment: allotmentNow, allotment_before: allotmentBefore, weekly_allotment: weekly});
     this.$el.empty();
     this.$el.html(HandlebarsTemplates['games/showAllotment'](thisGame.attributes))
   },
