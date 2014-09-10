@@ -181,8 +181,8 @@ App.Views.StartForm = Backbone.View.extend({
     if (allotmentNow && allotmentBefore > 0) {
       var weekly = (allotmentNow / 4)
       thisGame.set({allotment: allotmentNow, allotment_before: allotmentBefore, weekly_allotment: weekly});
-      thisGame.save();
-      this.showAllotment();
+      thisGame.save({success: this.showAllotment() });
+
     } else {
       $('.error').remove();
       this.$el.append('<br><div class="alert alert-danger error" role="alert" class="text-center">With this calculation, you would not recieve benefits. Please select a lower income amount to continue.</div>');
@@ -192,7 +192,6 @@ App.Views.StartForm = Backbone.View.extend({
   showAllotment: function(){
     this.$el.empty();
     this.$el.html(HandlebarsTemplates['games/showAllotment'](thisGame.attributes))
-    console.log(thisGame)
   },
 
   //Adds Shopping Form
