@@ -180,9 +180,8 @@ App.Views.StartForm = Backbone.View.extend({
     //If allotments are positive numbers continue game, else error
     if (allotmentNow && allotmentBefore > 0) {
       var weekly = (allotmentNow / 4)
-      thisGame.set({allotment: allotmentNow, allotment_before: allotmentBefore, weekly_allotment: weekly});
-      thisGame.save({success: this.showAllotment() });
-
+      thisGame.save({allotment: allotmentNow, allotment_before: allotmentBefore, weekly_allotment: weekly});
+      this.showAllotment();
     } else {
       $('.error').remove();
       this.$el.append('<br><div class="alert alert-danger error" role="alert" class="text-center">With this calculation, you would not recieve benefits. Please select a lower income amount to continue.</div>');
